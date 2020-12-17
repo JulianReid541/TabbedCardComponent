@@ -25,7 +25,7 @@ const Underline = styled.div`
   width: 33.33%;
   height: 4px;
   background: #6b44a9;
-  transform: translateXX(${p => p.active === 0 ? 0 : p.active * 100}%);
+  transform: translateX(${p => p.active === 0 ? 0 : p.active * 100}%);
   ${transition};
 `;
 
@@ -65,12 +65,12 @@ const Tabs = ({active, setActive}) => (
 
 const TabbedCard = () => {
   const [active, setActive] = useState(0);
-
   return (
     <Card>
       <Tabs active={active} setActive={setActive} />
       <Content active={active}>
-        {tabs.map((tab) => (<Tab>{tab}</Tab>
+        {tabs.map((tab) => (
+          <Tab>{tab}</Tab>
         ))}
       </Content>
     </Card>
